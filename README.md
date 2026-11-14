@@ -47,7 +47,14 @@ npm run build
 
 ### Updating the site
 
-Edit the files in `site/`, then upload the changed files to the Wix site
-above (for example, by asking Claude Code with the Wix connector to
-"upload the changed files in site/ to Wix site 7e0c2898-...").
-Commit the change here as well, so this repository stays the source of truth.
+Edit the files in `site/` and merge the change into `main`. A GitHub Actions
+workflow (`.github/workflows/deploy-to-wix.yml`) then uploads `site/` to Wix
+and checks every page loads. You can also run it by hand: Actions tab >
+"Deploy site to Wix" > "Run workflow".
+
+The workflow needs a repository secret called `WIX_API_KEY`:
+
+1. Create a key in the Wix API Keys Manager: https://manage.wix.com/account/api-keys
+   Give it access to this site only.
+2. In GitHub, go to Settings > Secrets and variables > Actions >
+   New repository secret. Name it `WIX_API_KEY` and paste the key.

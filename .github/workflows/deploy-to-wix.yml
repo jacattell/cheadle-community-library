@@ -1,0 +1,104 @@
+# Publish the website in site/ to the Wix test site.
+#
+# Runs when a change to site/ is merged into main, or by hand from the
+# Actions tab ("Run workflow").
+#
+# Needs one repository secret: WIX_API_KEY (a Wix API key from
+# https://manage.wix.com/account/api-keys with access to this site).
+# The key is never printed in the logs.
+
+name: Deploy site to Wix
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+  workflow_dispatch:
+
+# Only one deploy at a time; a newer one waits for the older one to finish.
+concurrency:
+  group: wix-deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  WIX_SITE_ID: 7e0c2898-4af1-42a9-82e3-f02b5de1e20f
+  SITE_URL: https://headless-patlbjrwgcb-james95939-140a.wix-site-host.com
+  WIX_CLI: "@wix/cli@1.2.13"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js (the Wix CLI needs Node 24)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Check the API key secret is set
+        env:
+          WIX_API_KEY: ${{ secrets.WIX_API_KEY }}
+        run: |
+          if [ -z "$WIX_API_KEY" ]; then
+            echo "::error::The WIX_API_KEY secret is missing. Add it in Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+
+      - name: Log in to Wix with the API key
+        env:
+          WIX_API_KEY: ${{ secrets.WIX_API_KEY }}
+        run: npx --yes "$WIX_CLI" login --api-key "$WIX_API_KEY"
+
+      - name: Upload site/ to Wix
+        run: |
+          set -euo pipefail
+          TOKEN="$(npx --yes "$WIX_CLI" token)"
+          echo "::add-mask::$TOKEN"
+
+          # One form part per file, named by its path inside site/.
+          # This replaces the whole site with exactly the files in site/.
+          cd site
+          args=()
+          while IFS= read -r -d '' f; do
+            path="${f#./}"
+            args+=(-F "files=@${path};filename=${path}")
+            echo "Adding ${path}"
+          done < <(find . -type f -print0 | sort -z)
+
+          status=$(curl -sS -o ../drop.json -w '%{http_code}' -X POST \
+            "https://www.wixapis.com/headless-business-setup/v1/headless-business/${WIX_SITE_ID}/drop?agent=github-actions/ci/unknown" \
+            -H "Authorization: ${TOKEN}" \
+            "${args[@]}")
+          echo "Wix answered HTTP ${status}:"
+          cat ../drop.json; echo
+          if [ "$status" != "200" ]; then
+            echo "::error::Upload to Wix failed (HTTP ${status}). See the response above."
+            exit 1
+          fi
+
+      - name: Check every page loads
+        run: |
+          set -euo pipefail
+          failed=0
+          for f in $(cd site && find . -type f | sed 's|^\./||' | sort); do
+            code=000
+            for attempt in 1 2 3 4 5; do
+              code=$(curl -s -o /dev/null -w '%{http_code}' "${SITE_URL}/${f}?deploy=${GITHUB_RUN_ID}") || true
+              [ "$code" = "200" ] && break
+              sleep 5
+            done
+            echo "${code} /${f}"
+            [ "$code" = "200" ] || failed=1
+          done
+          if [ "$failed" != "0" ]; then
+            echo "::error::Some files did not load on the live site."
+            exit 1
+          fi
+          echo "Live site: ${SITE_URL}"
