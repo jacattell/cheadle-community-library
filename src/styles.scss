@@ -19,10 +19,14 @@
 @use "govuk-frontend/dist/govuk/components/table";
 @use "govuk-frontend/dist/govuk/components/inset-text";
 
-@use "govuk-frontend/dist/govuk/utilities";
-@use "govuk-frontend/dist/govuk/overrides";
+@use "govuk-frontend/dist/govuk/utilities/visually-hidden";
+
 
 // Site-specific additions
+.app-footer-text {
+  margin-bottom: 0;
+}
+
 .app-embed {
   display: block;
   width: 100%;
