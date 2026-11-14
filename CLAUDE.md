@@ -17,7 +17,7 @@ Many visitors are older people, so keep pages simple and easy to read.
 - `site/` – the static website (plain HTML). This is what gets uploaded to Wix.
 - `src/styles.scss` – styles, built on GOV.UK Frontend. Compiles to
   `site/assets/styles.css`. Do not edit the compiled CSS by hand.
-- Build the CSS: `npm install` then `npm run build`.
+- Build the CSS: `npm install` then `npm run build` (a post-build step makes the CSS plain ASCII so text uploads are exact).
 
 ## Design system
 

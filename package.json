@@ -3,7 +3,8 @@
   "private": true,
   "description": "Static website for Cheadle Community Library, styled with the GOV.UK Design System.",
   "scripts": {
-    "build": "sass --no-source-map --style=compressed --load-path=node_modules --quiet-deps --no-charset src/styles.scss site/assets/styles.css"
+    "build": "sass --no-source-map --style=compressed --load-path=node_modules --quiet-deps --no-charset src/styles.scss site/assets/styles.css",
+    "postbuild": "node scripts/ascii-css.mjs"
   },
   "devDependencies": {
     "govuk-frontend": "^6.6.0",
