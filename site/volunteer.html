@@ -1,38 +1,64 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" class="govuk-template">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Volunteer - Cheadle Community Library</title>
   <meta name="description" content="Volunteer at Cheadle Community Library.">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+  <meta name="theme-color" content="#0b0c0c">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
-<a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
-    <div class="inner">
-      <a class="site-title" href="index.html">Cheadle Community Library</a>
-      <nav class="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="index.html">Homepage</a></li>
-          <li><a href="room-and-space-hire.html">Room and space hire</a></li>
-          <li><a href="volunteer.html" aria-current="page">Volunteer</a></li>
-        </ul>
-      </nav>
+<body class="govuk-template__body">
+  <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
+
+  <header class="govuk-generic-header">
+    <div class="govuk-generic-header__container govuk-width-container">
+      <div class="govuk-generic-header__logo">
+        <a href="index.html" class="govuk-generic-header__homepage-link">Cheadle Community Library</a>
+      </div>
     </div>
   </header>
-  <div class="banner"><h1>Volunteer</h1></div>
 
-  <main id="main">
-    <p>If you're interested in volunteering at Cheadle Community Library, please complete the form below and we'll be in touch.</p>
-    <iframe class="embed embed-form" title="Volunteer form"
-      src="https://docs.google.com/forms/d/e/1FAIpQLSfsVLJHFGkZJeOpBQUL4doLVZ6-88tW2nRvI6eWf5EMwzZgeA/viewform?embedded=true"
-      loading="lazy">Loading…</iframe>
-    <p>If the form does not appear, <a href="https://docs.google.com/forms/d/e/1FAIpQLSfsVLJHFGkZJeOpBQUL4doLVZ6-88tW2nRvI6eWf5EMwzZgeA/viewform">open the volunteer form</a>.</p>
-  </main>
-  <footer class="site-footer">
-    <p>Cheadle Community Library</p>
+  <div class="govuk-service-navigation">
+    <div class="govuk-width-container">
+      <div class="govuk-service-navigation__container">
+        <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+          <ul class="govuk-service-navigation__list" id="navigation">
+            <li class="govuk-service-navigation__item"><a class="govuk-service-navigation__link" href="index.html">Homepage</a></li>
+            <li class="govuk-service-navigation__item"><a class="govuk-service-navigation__link" href="room-and-space-hire.html">Room and space hire</a></li>
+            <li class="govuk-service-navigation__item govuk-service-navigation__item--active"><a class="govuk-service-navigation__link" href="volunteer.html" aria-current="page"><strong class="govuk-service-navigation__active-fallback">Volunteer</strong></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper" id="main-content">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl">Volunteer</h1>
+          <p class="govuk-body">If you're interested in volunteering at Cheadle Community Library, please complete the form below and we'll be in touch.</p>
+          <p class="govuk-body">If the form does not appear, <a class="govuk-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfsVLJHFGkZJeOpBQUL4doLVZ6-88tW2nRvI6eWf5EMwzZgeA/viewform">open the volunteer form</a>.</p>
+        </div>
+      </div>
+      <iframe class="app-embed app-embed--form" title="volunteer form" src="https://docs.google.com/forms/d/e/1FAIpQLSfsVLJHFGkZJeOpBQUL4doLVZ6-88tW2nRvI6eWf5EMwzZgeA/viewform?embedded=true" loading="lazy">Loading…</iframe>
+    </main>
+  </div>
+
+  <footer class="govuk-footer">
+    <div class="govuk-width-container">
+      <div class="govuk-footer__meta">
+        <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <h2 class="govuk-visually-hidden">Support links</h2>
+          <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="index.html#contact">Contact us</a></li>
+            <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="https://www.facebook.com/cheadlecommunitylibrary">Facebook</a></li>
+          </ul>
+          <p class="govuk-body-s app-footer-text">Cheadle Community Library</p>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 </html>

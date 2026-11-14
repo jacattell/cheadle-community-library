@@ -21,14 +21,29 @@ This is a separate site. It does not change www.cheadlecommunitylibrary.org.uk.
 | `site/index.html` | Homepage: hours, contact, Wi-Fi, computers, printing, What's on calendar |
 | `site/room-and-space-hire.html` | Room and space hire (embedded Google Form) |
 | `site/volunteer.html` | Volunteer (embedded Google Form) |
-| `site/assets/styles.css` | Shared styles |
+| `site/assets/styles.css` | Compiled styles (built from `src/styles.scss`) |
 
-### Differences from the Google Sites prototype
+### Design
 
-- The menu is at the top of every page as large buttons, not down the
-  left side. User testing found an older visitor did not notice the side menu.
-- Text is a little larger (18px base).
+The site uses the [GOV.UK Design System](https://design-system.service.gov.uk/)
+(`govuk-frontend`), without GOV.UK branding: no crown, no GOV.UK name, and
+Arial instead of the GDS Transport font, because the site is not on GOV.UK.
+
+Differences from the Google Sites prototype:
+
+- The menu is at the top of every page, not down the left side. User testing
+  found an older visitor did not notice the side menu.
+- Times are written in GOV.UK style (for example, 9am to 5pm).
 - Each form page has a plain link to open the form, in case the embed does not load.
+
+### Building the styles
+
+Styles live in `src/styles.scss`. To rebuild `site/assets/styles.css`:
+
+```
+npm install
+npm run build
+```
 
 ### Updating the site
 

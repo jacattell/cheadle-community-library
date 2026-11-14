@@ -1,38 +1,64 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" class="govuk-template">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Room and space hire - Cheadle Community Library</title>
   <meta name="description" content="Hire a private room or public space at Cheadle Community Library.">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+  <meta name="theme-color" content="#0b0c0c">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
-<a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
-    <div class="inner">
-      <a class="site-title" href="index.html">Cheadle Community Library</a>
-      <nav class="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="index.html">Homepage</a></li>
-          <li><a href="room-and-space-hire.html" aria-current="page">Room and space hire</a></li>
-          <li><a href="volunteer.html">Volunteer</a></li>
-        </ul>
-      </nav>
+<body class="govuk-template__body">
+  <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
+
+  <header class="govuk-generic-header">
+    <div class="govuk-generic-header__container govuk-width-container">
+      <div class="govuk-generic-header__logo">
+        <a href="index.html" class="govuk-generic-header__homepage-link">Cheadle Community Library</a>
+      </div>
     </div>
   </header>
-  <div class="banner"><h1>Room and space hire</h1></div>
 
-  <main id="main">
-    <p>You can hire our private room or public spaces. Please complete the form below and we'll be in touch. You can <a href="index.html#contact">contact us</a> to discuss or follow up.</p>
-    <iframe class="embed embed-form" title="Room and space hire form"
-      src="https://docs.google.com/forms/d/e/1FAIpQLSeXlyZN2M69jTfdkDNarWkJptoIAYtqoV0FTOL54UyosBF2vw/viewform?embedded=true"
-      loading="lazy">Loading…</iframe>
-    <p>If the form does not appear, <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXlyZN2M69jTfdkDNarWkJptoIAYtqoV0FTOL54UyosBF2vw/viewform">open the room and space hire form</a>.</p>
-  </main>
-  <footer class="site-footer">
-    <p>Cheadle Community Library</p>
+  <div class="govuk-service-navigation">
+    <div class="govuk-width-container">
+      <div class="govuk-service-navigation__container">
+        <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+          <ul class="govuk-service-navigation__list" id="navigation">
+            <li class="govuk-service-navigation__item"><a class="govuk-service-navigation__link" href="index.html">Homepage</a></li>
+            <li class="govuk-service-navigation__item govuk-service-navigation__item--active"><a class="govuk-service-navigation__link" href="room-and-space-hire.html" aria-current="page"><strong class="govuk-service-navigation__active-fallback">Room and space hire</strong></a></li>
+            <li class="govuk-service-navigation__item"><a class="govuk-service-navigation__link" href="volunteer.html">Volunteer</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper" id="main-content">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl">Room and space hire</h1>
+          <p class="govuk-body">You can hire our private room or public spaces. Please complete the form below and we'll be in touch. You can <a class="govuk-link" href="index.html#contact">contact us</a> to discuss or follow up.</p>
+          <p class="govuk-body">If the form does not appear, <a class="govuk-link" href="https://docs.google.com/forms/d/e/1FAIpQLSeXlyZN2M69jTfdkDNarWkJptoIAYtqoV0FTOL54UyosBF2vw/viewform">open the room and space hire form</a>.</p>
+        </div>
+      </div>
+      <iframe class="app-embed app-embed--form" title="room and space hire form" src="https://docs.google.com/forms/d/e/1FAIpQLSeXlyZN2M69jTfdkDNarWkJptoIAYtqoV0FTOL54UyosBF2vw/viewform?embedded=true" loading="lazy">Loading…</iframe>
+    </main>
+  </div>
+
+  <footer class="govuk-footer">
+    <div class="govuk-width-container">
+      <div class="govuk-footer__meta">
+        <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <h2 class="govuk-visually-hidden">Support links</h2>
+          <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="index.html#contact">Contact us</a></li>
+            <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="https://www.facebook.com/cheadlecommunitylibrary">Facebook</a></li>
+          </ul>
+          <p class="govuk-body-s app-footer-text">Cheadle Community Library</p>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
