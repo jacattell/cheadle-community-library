@@ -38,18 +38,16 @@ top of the page – user testing showed older visitors miss side menus.
 - Live (test) address: https://headless-patlbjrwgcb-james95939-140a.wix-site-host.com
 - Dashboard: https://manage.wix.com/dashboard/7e0c2898-4af1-42a9-82e3-f02b5de1e20f
 
-**Automatic deploys:** the GitHub Actions workflow
-`.github/workflows/deploy-to-wix.yml` uploads the whole `site/` folder to that
-site ID whenever a change to `site/` is merged into `main`. It can also be run
-by hand from the Actions tab. It needs the `WIX_API_KEY` repository secret.
-Never put the key in code, commits or chat.
+To deploy, upload the changed files in `site/` to that site ID with the Wix
+connector (`UploadHeadlessWebsiteFiles`). The connector cannot read files from
+GitHub, so files must be sent as text. Then compare the live files with the
+repository to confirm the upload is exact.
 
-If the workflow is not working, deploy by hand: upload the changed files in
-`site/` with the Wix connector (`UploadHeadlessWebsiteFiles`). The Wix connector
-cannot read files from GitHub, so files must be sent as text.
+Automatic deploys from GitHub Actions were tried and do not work: Wix rejects
+API-key logins for this site (`VELO.APP_PROJECT_READ` denied for the site's
+app, even with every permission). Do not retry this without new information.
 
 Never create a new Wix site for updates. This site is separate from the live www.cheadlecommunitylibrary.org.uk
 site, which must not be changed without asking.
 
-After deploying, check the workflow run passed (it checks every page returns 200)
-and look at the changed pages in a browser.
+After deploying, check every page returns 200 and look at the changed pages in a browser.
