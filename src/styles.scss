@@ -1,0 +1,38 @@
+// Cheadle Community Library styles, built on GOV.UK Frontend.
+//
+// This site is not on GOV.UK, so it must not use the GDS Transport font,
+// the crown or the GOV.UK name. We use Arial instead, as GOV.UK advises.
+// Only the components the site uses are included, to keep the CSS small.
+
+@use "govuk-frontend/dist/govuk/base" with (
+  $govuk-font-family: (arial, sans-serif)
+);
+
+@use "govuk-frontend/dist/govuk/core";
+@use "govuk-frontend/dist/govuk/objects";
+
+@use "govuk-frontend/dist/govuk/components/skip-link";
+@use "govuk-frontend/dist/govuk/components/generic-header";
+@use "govuk-frontend/dist/govuk/components/service-navigation";
+@use "govuk-frontend/dist/govuk/components/footer";
+@use "govuk-frontend/dist/govuk/components/summary-list";
+@use "govuk-frontend/dist/govuk/components/table";
+@use "govuk-frontend/dist/govuk/components/inset-text";
+
+@use "govuk-frontend/dist/govuk/utilities";
+@use "govuk-frontend/dist/govuk/overrides";
+
+// Site-specific additions
+.app-embed {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+.app-embed--calendar {
+  height: 600px;
+}
+
+.app-embed--form {
+  height: 1400px;
+}

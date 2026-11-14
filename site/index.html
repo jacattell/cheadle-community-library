@@ -1,90 +1,133 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" class="govuk-template">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Cheadle Community Library</title>
   <meta name="description" content="Opening hours, contact details, Wi-Fi, computers, printing and events at Cheadle Community Library.">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+  <meta name="theme-color" content="#0b0c0c">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
-<a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
-    <div class="inner">
-      <a class="site-title" href="index.html">Cheadle Community Library</a>
-      <nav class="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="index.html" aria-current="page">Homepage</a></li>
-          <li><a href="room-and-space-hire.html">Room and space hire</a></li>
-          <li><a href="volunteer.html">Volunteer</a></li>
-        </ul>
-      </nav>
+<body class="govuk-template__body">
+  <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
+
+  <header class="govuk-generic-header">
+    <div class="govuk-generic-header__container govuk-width-container">
+      <div class="govuk-generic-header__logo">
+        <a href="index.html" class="govuk-generic-header__homepage-link">Cheadle Community Library</a>
+      </div>
     </div>
   </header>
-  <div class="banner"><h1>Cheadle Community Library</h1></div>
 
-  <main id="main">
-    <div class="grid">
-      <section class="card" aria-labelledby="hours">
-        <h2 id="hours">Opening hours</h2>
-        <ul class="plain">
-          <li>0900 to 1700 Monday to Friday</li>
-          <li>0900 to 1200 Saturday</li>
-        </ul>
-      </section>
-
-      <section class="card" aria-labelledby="contact">
-        <h2 id="contact">Contact us</h2>
-        <ul class="plain">
-          <li><a href="mailto:cheadle.library@staffordshire.gov.uk">cheadle.library@staffordshire.gov.uk</a></li>
-          <li><a href="tel:+441538332068">01538 332068</a></li>
-          <li><a href="https://www.facebook.com/cheadlecommunitylibrary">Facebook</a></li>
-        </ul>
-      </section>
+  <div class="govuk-service-navigation">
+    <div class="govuk-width-container">
+      <div class="govuk-service-navigation__container">
+        <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+          <ul class="govuk-service-navigation__list" id="navigation">
+            <li class="govuk-service-navigation__item govuk-service-navigation__item--active"><a class="govuk-service-navigation__link" href="index.html" aria-current="page"><strong class="govuk-service-navigation__active-fallback">Homepage</strong></a></li>
+            <li class="govuk-service-navigation__item"><a class="govuk-service-navigation__link" href="room-and-space-hire.html">Room and space hire</a></li>
+            <li class="govuk-service-navigation__item"><a class="govuk-service-navigation__link" href="volunteer.html">Volunteer</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
+  </div>
 
-    <div class="grid">
-      <section aria-labelledby="wifi">
-        <h2 id="wifi">Wi-Fi</h2>
-        <p>Free, high speed access for everyone via <a href="https://www.wifi.service.gov.uk/connect-to-govwifi/">GovWifi</a>.</p>
-      </section>
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper" id="main-content">
+      <h1 class="govuk-heading-xl">Cheadle Community Library</h1>
 
-      <section aria-labelledby="computers">
-        <h2 id="computers">Computers</h2>
-        <p>Free access for <a href="https://www.staffordshire.gov.uk/libraries/join-your-library">library members</a></p>
-        <ul>
-          <li>8 <a href="https://pcbooking.staffordshire.gov.uk/">bookable</a> computers over 2 floors</li>
-          <li>High speed internet access</li>
-          <li><a href="https://www.libreoffice.org/">LibreOffice</a> (Microsoft Office alternative)</li>
-          <li>A4 <a href="https://www.canon.co.uk/support/consumer/products/scanners/canoscan/lide-series/canoscan-lide-300.html?type=manuals">Canon CanoScan LiDE 300</a> scanner on computer number 7 upstairs</li>
-        </ul>
-      </section>
-    </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          <h2 class="govuk-heading-l" id="opening-hours">Opening hours</h2>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Monday to Friday</dt>
+              <dd class="govuk-summary-list__value">9am to 5pm</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Saturday</dt>
+              <dd class="govuk-summary-list__value">9am to 12pm</dd>
+            </div>
+          </dl>
+        </div>
 
-    <section aria-labelledby="print">
-      <h2 id="print">Print and photocopy</h2>
-      <p>We have <a href="https://www.hp.com/bd-en/products/printers/product-details/38348121">HP Colour LaserJet Managed MFP E786</a> printer / photocopier. Currently you can only print via one of the library computers, or by plugging your USB-A Memory stick into the printer. Our volunteers will gladly help.</p>
-      <p>The costs per page are:</p>
-      <table class="prices">
-        <tbody>
-          <tr><td>A4 black &amp; white</td><td>15p</td></tr>
-          <tr><td>A4 colour</td><td>50p</td></tr>
-          <tr><td>A3 black &amp; white</td><td>30p</td></tr>
-          <tr><td>A3 colour</td><td>£1</td></tr>
-        </tbody>
-      </table>
-    </section>
+        <div class="govuk-grid-column-one-half">
+          <h2 class="govuk-heading-l" id="contact">Contact us</h2>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Email</dt>
+              <dd class="govuk-summary-list__value"><a class="govuk-link" href="mailto:cheadle.library@staffordshire.gov.uk">cheadle.library@staffordshire.gov.uk</a></dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Phone</dt>
+              <dd class="govuk-summary-list__value"><a class="govuk-link" href="tel:+441538332068">01538 332068</a></dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Facebook</dt>
+              <dd class="govuk-summary-list__value"><a class="govuk-link" href="https://www.facebook.com/cheadlecommunitylibrary">Cheadle Community Library on Facebook</a></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
 
-    <section aria-labelledby="whats-on">
-      <h2 id="whats-on">What's on</h2>
-      <iframe class="embed embed-calendar" title="What's on at Cheadle Community Library (calendar)"
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-l" id="wifi">Wi-Fi</h2>
+          <p class="govuk-body">Free, high speed access for everyone via <a class="govuk-link" href="https://www.wifi.service.gov.uk/connect-to-govwifi/">GovWifi</a>.</p>
+
+          <h2 class="govuk-heading-l" id="computers">Computers</h2>
+          <p class="govuk-body">Free access for <a class="govuk-link" href="https://www.staffordshire.gov.uk/libraries/join-your-library">library members</a>:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>8 <a class="govuk-link" href="https://pcbooking.staffordshire.gov.uk/">bookable</a> computers over 2 floors</li>
+            <li>high speed internet access</li>
+            <li><a class="govuk-link" href="https://www.libreoffice.org/">LibreOffice</a> (Microsoft Office alternative)</li>
+            <li>A4 <a class="govuk-link" href="https://www.canon.co.uk/support/consumer/products/scanners/canoscan/lide-series/canoscan-lide-300.html?type=manuals">Canon CanoScan LiDE 300</a> scanner on computer number 7 upstairs</li>
+          </ul>
+
+          <h2 class="govuk-heading-l" id="print">Print and photocopy</h2>
+          <p class="govuk-body">We have an <a class="govuk-link" href="https://www.hp.com/bd-en/products/printers/product-details/38348121">HP Colour LaserJet Managed MFP E786</a> printer / photocopier.</p>
+          <p class="govuk-body">Currently you can only print via one of the library computers, or by plugging your USB-A memory stick into the printer.</p>
+          <div class="govuk-inset-text">Our volunteers will gladly help.</div>
+
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Costs per page</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Paper size and colour</th>
+                <th scope="col" class="govuk-table__header govuk-table__header--numeric">Cost</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row"><th scope="row" class="govuk-table__header">A4 black and white</th><td class="govuk-table__cell govuk-table__cell--numeric">15p</td></tr>
+              <tr class="govuk-table__row"><th scope="row" class="govuk-table__header">A4 colour</th><td class="govuk-table__cell govuk-table__cell--numeric">50p</td></tr>
+              <tr class="govuk-table__row"><th scope="row" class="govuk-table__header">A3 black and white</th><td class="govuk-table__cell govuk-table__cell--numeric">30p</td></tr>
+              <tr class="govuk-table__row"><th scope="row" class="govuk-table__header">A3 colour</th><td class="govuk-table__cell govuk-table__cell--numeric">£1</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h2 class="govuk-heading-l" id="whats-on">What's on</h2>
+      <iframe class="app-embed app-embed--calendar" title="What's on at Cheadle Community Library (calendar)"
         src="https://calendar.google.com/calendar/embed?mode=AGENDA&amp;showPrint=0&amp;showTz=0&amp;showCalendars=1&amp;color=%23a47ae2&amp;src=c_4671f48873075a04f2585f5e7593ce7c180861c823e7054abd7c51031a0e3cd6%40group.calendar.google.com&amp;ctz=Europe%2FLondon"
         loading="lazy"></iframe>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <p>Cheadle Community Library</p>
+    </main>
+  </div>
+
+  <footer class="govuk-footer">
+    <div class="govuk-width-container">
+      <div class="govuk-footer__meta">
+        <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <h2 class="govuk-visually-hidden">Support links</h2>
+          <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="index.html#contact">Contact us</a></li>
+            <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="https://www.facebook.com/cheadlecommunitylibrary">Facebook</a></li>
+          </ul>
+          <p class="govuk-body-s govuk-!-margin-bottom-0">Cheadle Community Library</p>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
